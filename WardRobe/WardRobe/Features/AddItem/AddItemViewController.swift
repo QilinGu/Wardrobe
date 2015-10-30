@@ -20,8 +20,8 @@ class AddItemViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.titleLabel.text = self.categoryName!.uppercaseString
-        self.contentBackgroundView.layer.cornerRadius = 10.0
-        self.addItemButton.layer.cornerRadius = 5.0
+        self.contentBackgroundView.layer.cornerRadius = kAddBackgroundCornerRadius
+        self.addItemButton.layer.cornerRadius = kAddButtonCornerRadius
 
         self.addItemButton.backgroundColor = self.selectedColor!
     }
@@ -39,7 +39,7 @@ class AddItemViewController: UIViewController, UITextFieldDelegate {
         var txtAfterUpdate:NSString = textField.text! as NSString
         txtAfterUpdate = txtAfterUpdate.stringByReplacingCharactersInRange(range, withString: string)
 
-        self.itemLabelHeight.constant = txtAfterUpdate.length > 0 ? 21 : 0
+        self.itemLabelHeight.constant = txtAfterUpdate.length > 0 ? kTextFieldDefaultHeight : kTextFieldCompressedHeight
 
         return true
     }

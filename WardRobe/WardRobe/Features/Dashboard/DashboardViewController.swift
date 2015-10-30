@@ -15,11 +15,11 @@ public class DashboardViewController: UIViewController {
     var selectedColor : UIColor?
     override public func viewDidLoad() {
         super.viewDidLoad()
-        self.collectionView.registerNib(UINib(nibName: "ItemRowCell", bundle: nil), forCellWithReuseIdentifier: "ItemRowCell")
-        self.collectionView.registerNib(UINib(nibName: "ItemHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "ItemHeaderView")
+        self.collectionView.registerNib(UINib(nibName: kRowCellIdentifier, bundle: nil), forCellWithReuseIdentifier: kRowCellIdentifier)
+        self.collectionView.registerNib(UINib(nibName: kHeaderCellIdentifier, bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: kHeaderCellIdentifier)
         self.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Roboto-Light", size: 18)!]
 
-        self.title = "MY WARDROBE"
+        self.title = kDashboardTitle
     }
 
     override public func didReceiveMemoryWarning() {
@@ -51,7 +51,7 @@ extension DashboardViewController : UICollectionViewDataSource {
     public func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         if(collectionView == self.collectionView)
         {
-            let cell : ItemRowCell = collectionView.dequeueReusableCellWithReuseIdentifier("ItemRowCell", forIndexPath: indexPath) as! ItemRowCell
+            let cell : ItemRowCell = collectionView.dequeueReusableCellWithReuseIdentifier(kRowCellIdentifier, forIndexPath: indexPath) as! ItemRowCell
             cell.collectionView.backgroundColor = self.backgroundColors[indexPath.section]
             cell.collectionView.dataSource = self
             cell.collectionView.delegate = self
@@ -62,7 +62,7 @@ extension DashboardViewController : UICollectionViewDataSource {
         let category : Category = UserSession.sharedInstance.categoryList[indexPath.section]
         if(indexPath.row == category.category_item!.count)
         {
-            cell.itemimageView.image = UIImage(named: "add")
+            cell.itemimageView.image = UIImage(named: kDefaultImage)
         }
         cell.contentView.clipsToBounds = true
         cell.contentView.layer.cornerRadius = 5.0
@@ -73,7 +73,7 @@ extension DashboardViewController : UICollectionViewDataSource {
     public func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
         if(collectionView == self.collectionView)
         {
-            let headerView: ItemHeaderView = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: "ItemHeaderView", forIndexPath:   indexPath) as! ItemHeaderView
+            let headerView: ItemHeaderView = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: kHeaderCellIdentifier, forIndexPath:   indexPath) as! ItemHeaderView
             let category : Category = UserSession.sharedInstance.categoryList[indexPath.section]
             headerView.headerTitleLabel.text = category.categoryName?.uppercaseString
             return headerView
@@ -88,7 +88,7 @@ extension DashboardViewController : UICollectionViewDelegate{
         {
             self.selectedCategory =  UserSession.sharedInstance.categoryList[indexPath.section]
             self.selectedColor = self.backgroundColors[collectionView.tag]
-            self.performSegueWithIdentifier("AddItemSegue", sender: self)
+            self.performSegueWithIdentifier(kAddItemSegue, sender: self)
         }
     }
 }
@@ -99,13 +99,13 @@ extension DashboardViewController : UICollectionViewDelegateFlowLayout
     {
         if(collectionView == self.collectionView)
         {
-            return CGSizeMake(self.collectionView.frame.size.width, 150)
+            return CGSizeMake(self.collectionView.frame.size.width, kDefaultRowHeight)
         }
-        return CGSizeMake(self.collectionView.frame.size.width / 3, 150 - 20)
+        return CGSizeMake(self.collectionView.frame.size.width / kMaxCellsPerRow, kDefaultRowHeight - (kEdgeInsetLevel2Collection * 2))
     }
 
     public func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
-        return 0.0
+        return kDefaultInterItemSpacing
     }
 
     public func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
@@ -113,13 +113,13 @@ extension DashboardViewController : UICollectionViewDelegateFlowLayout
         {
             return UIEdgeInsetsZero
         }
-        return UIEdgeInsetsMake(10, 10, 10, 10)
+        return UIEdgeInsetsMake(kEdgeInsetLevel2Collection, kEdgeInsetLevel2Collection, kEdgeInsetLevel2Collection, kEdgeInsetLevel2Collection)
     }
     
     public func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         if(collectionView == self.collectionView)
         {
-            return CGSizeMake(collectionView.frame.size.width, 30)
+            return CGSizeMake(collectionView.frame.size.width, kDefaultHeaderHeight)
         }
          return CGSizeZero
     }

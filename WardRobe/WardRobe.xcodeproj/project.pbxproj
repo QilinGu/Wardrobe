@@ -39,11 +39,11 @@
 		F2DB746D1BE20B8E00F88CF2 /* ItemRowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2DB746B1BE20B8E00F88CF2 /* ItemRowCell.xib */; settings = {ASSET_TAGS = (); }; };
 		F2DB74731BE20C1400F88CF2 /* ItemHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DB74711BE20C1400F88CF2 /* ItemHeaderView.swift */; settings = {ASSET_TAGS = (); }; };
 		F2DB74741BE20C1400F88CF2 /* ItemHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2DB74721BE20C1400F88CF2 /* ItemHeaderView.xib */; settings = {ASSET_TAGS = (); }; };
-		F2DB74791BE20DEA00F88CF2 /* DataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DB74781BE20DEA00F88CF2 /* DataHelper.swift */; settings = {ASSET_TAGS = (); }; };
 		F2DB747C1BE20E6000F88CF2 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DB747B1BE20E6000F88CF2 /* UserSession.swift */; settings = {ASSET_TAGS = (); }; };
-		F2DB749F1BE2236C00F88CF2 /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DB749E1BE2236C00F88CF2 /* DatabaseHelper.swift */; settings = {ASSET_TAGS = (); }; };
-		F2DB74A11BE23E4800F88CF2 /* ColorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DB74A01BE23E4800F88CF2 /* ColorUtil.swift */; settings = {ASSET_TAGS = (); }; };
 		F2DB74A61BE249C100F88CF2 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DB74A51BE249C100F88CF2 /* AddItemViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		F2DB74B71BE34EE600F88CF2 /* ColorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DB74B01BE34EE600F88CF2 /* ColorUtil.swift */; settings = {ASSET_TAGS = (); }; };
+		F2DB74B91BE34EE600F88CF2 /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DB74B41BE34EE600F88CF2 /* DatabaseHelper.swift */; settings = {ASSET_TAGS = (); }; };
+		F2DB74BA1BE34EE600F88CF2 /* DataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DB74B61BE34EE600F88CF2 /* DataHelper.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,11 +81,13 @@
 		F2DB746B1BE20B8E00F88CF2 /* ItemRowCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ItemRowCell.xib; path = ItemRow/ItemRowCell.xib; sourceTree = "<group>"; };
 		F2DB74711BE20C1400F88CF2 /* ItemHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemHeaderView.swift; path = View/CollectionHeader/ItemHeaderView.swift; sourceTree = "<group>"; };
 		F2DB74721BE20C1400F88CF2 /* ItemHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ItemHeaderView.xib; path = View/CollectionHeader/ItemHeaderView.xib; sourceTree = "<group>"; };
-		F2DB74781BE20DEA00F88CF2 /* DataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataHelper.swift; path = Helper/DataHelper/DataHelper.swift; sourceTree = "<group>"; };
 		F2DB747B1BE20E6000F88CF2 /* UserSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserSession.swift; path = UserSession/UserSession.swift; sourceTree = "<group>"; };
-		F2DB749E1BE2236C00F88CF2 /* DatabaseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatabaseHelper.swift; path = Helper/DatabaseHelper/DatabaseHelper.swift; sourceTree = "<group>"; };
-		F2DB74A01BE23E4800F88CF2 /* ColorUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorUtil.swift; sourceTree = "<group>"; };
 		F2DB74A51BE249C100F88CF2 /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
+		F2DB74A81BE34B8D00F88CF2 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Constants/Constants.h; sourceTree = "<group>"; };
+		F2DB74A91BE34BE200F88CF2 /* WardRobe-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WardRobe-Bridging-Header.h"; sourceTree = "<group>"; };
+		F2DB74B01BE34EE600F88CF2 /* ColorUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorUtil.swift; sourceTree = "<group>"; };
+		F2DB74B41BE34EE600F88CF2 /* DatabaseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
+		F2DB74B61BE34EE600F88CF2 /* DataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 		F2DB74091BE1F1A700F88CF2 /* WardRobe */ = {
 			isa = PBXGroup;
 			children = (
+				F2DB74A71BE34B7000F88CF2 /* Constants */,
 				F2DB747A1BE20E3900F88CF2 /* UserSession */,
 				F2DB74771BE20DA700F88CF2 /* Helper */,
 				F2DB74411BE209A500F88CF2 /* Views */,
@@ -128,6 +131,7 @@
 				F2DB74111BE1F1A700F88CF2 /* Assets.xcassets */,
 				F2DB74131BE1F1A700F88CF2 /* LaunchScreen.storyboard */,
 				F2DB74161BE1F1A700F88CF2 /* Info.plist */,
+				F2DB74A91BE34BE200F88CF2 /* WardRobe-Bridging-Header.h */,
 			);
 			path = WardRobe;
 			sourceTree = "<group>";
@@ -283,9 +287,10 @@
 		F2DB74771BE20DA700F88CF2 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				F2DB74A01BE23E4800F88CF2 /* ColorUtil.swift */,
-				F2DB74781BE20DEA00F88CF2 /* DataHelper.swift */,
-				F2DB749E1BE2236C00F88CF2 /* DatabaseHelper.swift */,
+				F2DB74AF1BE34EE600F88CF2 /* Color */,
+				F2DB74B11BE34EE600F88CF2 /* Font */,
+				F2DB74B31BE34EE600F88CF2 /* DatabaseHelper */,
+				F2DB74B51BE34EE600F88CF2 /* DataHelper */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -305,6 +310,49 @@
 			);
 			name = AddItem;
 			path = Features/AddItem;
+			sourceTree = "<group>";
+		};
+		F2DB74A71BE34B7000F88CF2 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				F2DB74A81BE34B8D00F88CF2 /* Constants.h */,
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
+		F2DB74AF1BE34EE600F88CF2 /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				F2DB74B01BE34EE600F88CF2 /* ColorUtil.swift */,
+			);
+			name = Color;
+			path = Helper/Color;
+			sourceTree = "<group>";
+		};
+		F2DB74B11BE34EE600F88CF2 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Font;
+			path = Helper/Font;
+			sourceTree = "<group>";
+		};
+		F2DB74B31BE34EE600F88CF2 /* DatabaseHelper */ = {
+			isa = PBXGroup;
+			children = (
+				F2DB74B41BE34EE600F88CF2 /* DatabaseHelper.swift */,
+			);
+			name = DatabaseHelper;
+			path = Helper/DatabaseHelper;
+			sourceTree = "<group>";
+		};
+		F2DB74B51BE34EE600F88CF2 /* DataHelper */ = {
+			isa = PBXGroup;
+			children = (
+				F2DB74B61BE34EE600F88CF2 /* DataHelper.swift */,
+			);
+			name = DataHelper;
+			path = Helper/DataHelper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,6 +381,7 @@
 		F2DB73FF1BE1F1A700F88CF2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = bombaybrew;
 				TargetAttributes = {
@@ -396,21 +445,21 @@
 			files = (
 				F2DB74A61BE249C100F88CF2 /* AddItemViewController.swift in Sources */,
 				F2DB741E1BE206C600F88CF2 /* AppDelegate.swift in Sources */,
-				F2DB749F1BE2236C00F88CF2 /* DatabaseHelper.swift in Sources */,
-				F2DB74791BE20DEA00F88CF2 /* DataHelper.swift in Sources */,
 				F2DB743C1BE2092A00F88CF2 /* Item.swift in Sources */,
+				F2DB74B71BE34EE600F88CF2 /* ColorUtil.swift in Sources */,
 				F2DB747C1BE20E6000F88CF2 /* UserSession.swift in Sources */,
 				F2DB74391BE2092A00F88CF2 /* Category+CoreDataProperties.swift in Sources */,
 				F2DB746C1BE20B8E00F88CF2 /* ItemRowCell.swift in Sources */,
-				F2DB74A11BE23E4800F88CF2 /* ColorUtil.swift in Sources */,
 				F2DB74731BE20C1400F88CF2 /* ItemHeaderView.swift in Sources */,
 				F2DB743B1BE2092A00F88CF2 /* Item+CoreDataProperties.swift in Sources */,
+				F2DB74BA1BE34EE600F88CF2 /* DataHelper.swift in Sources */,
 				F2DB74491BE20A5C00F88CF2 /* ItemGridCell.swift in Sources */,
 				F2DB74341BE2083400F88CF2 /* ItemExtension.swift in Sources */,
 				F2DB742F1BE207DB00F88CF2 /* Wardrobe.xcdatamodeld in Sources */,
 				F2DB74321BE2081C00F88CF2 /* CategoryExtension.swift in Sources */,
 				F2DB743F1BE2099000F88CF2 /* DashboardViewController.swift in Sources */,
 				F2DB743A1BE2092A00F88CF2 /* Category.swift in Sources */,
+				F2DB74B91BE34EE600F88CF2 /* DatabaseHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,10 +571,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = WardRobe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bombaybrew.WardRobe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WardRobe/WardRobe-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -533,10 +585,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = WardRobe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bombaybrew.WardRobe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WardRobe/WardRobe-Bridging-Header.h";
 			};
 			name = Release;
 		};
