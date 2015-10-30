@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F277BE471BE40E8000808B42 /* SuggestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F277BE461BE40E8000808B42 /* SuggestionViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		F2DB74101BE1F1A700F88CF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2DB740E1BE1F1A700F88CF2 /* Main.storyboard */; };
 		F2DB74121BE1F1A700F88CF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2DB74111BE1F1A700F88CF2 /* Assets.xcassets */; };
 		F2DB74151BE1F1A700F88CF2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2DB74131BE1F1A700F88CF2 /* LaunchScreen.storyboard */; };
@@ -47,6 +48,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F277BE461BE40E8000808B42 /* SuggestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SuggestionViewController.swift; path = Features/Suggestion/SuggestionViewController.swift; sourceTree = "<group>"; };
 		F2DB74071BE1F1A700F88CF2 /* WardRobe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WardRobe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2DB740F1BE1F1A700F88CF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F2DB74111BE1F1A700F88CF2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -101,6 +103,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F277BE481BE40E8300808B42 /* Suggestion */ = {
+			isa = PBXGroup;
+			children = (
+				F277BE461BE40E8000808B42 /* SuggestionViewController.swift */,
+			);
+			name = Suggestion;
+			sourceTree = "<group>";
+		};
 		F2DB73FE1BE1F1A700F88CF2 = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +195,7 @@
 		F2DB743D1BE2094C00F88CF2 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				F277BE481BE40E8300808B42 /* Suggestion */,
 				F2DB74A41BE249C100F88CF2 /* AddItem */,
 				F2DB74401BE2099400F88CF2 /* Dashboard */,
 			);
@@ -451,6 +462,7 @@
 				F2DB74391BE2092A00F88CF2 /* Category+CoreDataProperties.swift in Sources */,
 				F2DB746C1BE20B8E00F88CF2 /* ItemRowCell.swift in Sources */,
 				F2DB74731BE20C1400F88CF2 /* ItemHeaderView.swift in Sources */,
+				F277BE471BE40E8000808B42 /* SuggestionViewController.swift in Sources */,
 				F2DB743B1BE2092A00F88CF2 /* Item+CoreDataProperties.swift in Sources */,
 				F2DB74BA1BE34EE600F88CF2 /* DataHelper.swift in Sources */,
 				F2DB74491BE20A5C00F88CF2 /* ItemGridCell.swift in Sources */,
@@ -613,6 +625,7 @@
 				F2DB741B1BE1F1A700F88CF2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

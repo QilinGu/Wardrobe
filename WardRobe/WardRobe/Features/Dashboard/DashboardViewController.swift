@@ -28,12 +28,16 @@ public class DashboardViewController: UIViewController {
     }
 
     public override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "AddItemSegue"){
         let destinationViewController = segue.destinationViewController as! AddItemViewController
         destinationViewController.itemDelegate  = self
         destinationViewController.categoryName = self.selectedCategory!.categoryName!
         destinationViewController.selectedColor = self.selectedColor!
+        }
     }
 
+    @IBAction func shuffleButtonClicked(sender: AnyObject) {
+    }
 
 }
 
@@ -101,7 +105,7 @@ extension DashboardViewController : UICollectionViewDelegate{
     public func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         if(collectionView != self.collectionView)
         {
-            self.selectedCategory =  UserSession.sharedInstance.categoryList[indexPath.section]
+            self.selectedCategory =  UserSession.sharedInstance.categoryList[collectionView.tag]
             self.selectedColor = self.backgroundColors[collectionView.tag]
             self.performSegueWithIdentifier(kAddItemSegue, sender: self)
         }
