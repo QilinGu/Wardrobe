@@ -59,6 +59,29 @@ public class DataHelper: NSObject {
             {
                 DatabaseHelper.sharedInstance.managedObjectContext.deleteObject(itemList[0] as Item)
             }
+        } catch _ as NSError {
+            // failure
+        }
+    }
+
+    func editItem(name : String, updatedName : String, updatedImage : NSData)
+    {
+        var itemList = [Item]()
+
+        let fetchRequest = NSFetchRequest(entityName: "Item")
+        do {
+            try itemList = DatabaseHelper.sharedInstance.managedObjectContext.executeFetchRequest(fetchRequest) as! [Item]
+            if(itemList.count > 0)
+            {
+                let item = (itemList[0] as Item)
+                item.itemName = updatedName
+                item.itemImage  = updatedImage
+                do {
+                    try DatabaseHelper.sharedInstance.managedObjectContext.save()
+
+                } catch _ as NSError {
+                }
+            }
         } catch let error as NSError {
             // failure
             print("Fetch failed: \(error.localizedDescription)")

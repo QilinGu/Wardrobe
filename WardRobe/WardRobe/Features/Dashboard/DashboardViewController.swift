@@ -11,8 +11,6 @@ import UIKit
 public class DashboardViewController: UIViewController {
     let backgroundColors = [UIColor.getBlueBackgroundForShirt(), UIColor.getCremeBackgroundForShirt()]
     @IBOutlet weak var collectionView: UICollectionView!
-    var selectedCategory : Category?
-    var selectedColor : UIColor?
     override public func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView.registerNib(UINib(nibName: kRowCellIdentifier, bundle: nil), forCellWithReuseIdentifier: kRowCellIdentifier)
@@ -28,12 +26,7 @@ public class DashboardViewController: UIViewController {
     }
 
     public override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if(segue.identifier == "AddItemSegue"){
-        let destinationViewController = segue.destinationViewController as! AddItemViewController
-        destinationViewController.itemDelegate  = self
-        destinationViewController.categoryName = self.selectedCategory!.categoryName!
-        destinationViewController.selectedColor = self.selectedColor!
-        }
+
     }
 
     func deleteButtonClicked(button : UIButton)
@@ -127,9 +120,21 @@ extension DashboardViewController : UICollectionViewDelegate{
     public func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         if(collectionView != self.collectionView)
         {
-            self.selectedCategory =  UserSession.sharedInstance.categoryList[collectionView.tag]
-            self.selectedColor = self.backgroundColors[collectionView.tag]
-            self.performSegueWithIdentifier(kAddItemSegue, sender: self)
+            let category : Category = UserSession.sharedInstance.categoryList[collectionView.tag]
+            let addItemVC : AddItemViewController = self.storyboard?.instantiateViewControllerWithIdentifier("AddItemViewController") as! AddItemViewController
+            addItemVC.selectedColor = self.backgroundColors[collectionView.tag]
+            addItemVC.categoryName = UserSession.sharedInstance.categoryList[collectionView.tag].categoryName!
+            addItemVC.itemDelegate  = self
+            if(indexPath.item == category.category_item!.count)
+            {
+                addItemVC.actionType = ActionType.AddNew
+            }
+            else
+            {
+                addItemVC.editingItem = (category.category_item?.allObjects[indexPath.row] as! Item)
+                addItemVC.actionType = ActionType.EditItem
+            }
+            self.presentViewController(addItemVC, animated: true, completion: nil)
         }
     }
 }

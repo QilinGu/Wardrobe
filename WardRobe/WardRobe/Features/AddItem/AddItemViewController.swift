@@ -13,7 +13,13 @@ protocol AddItemDelegate{
     func itemAdded()
 }
 
+enum ActionType{
+    case AddNew
+    case EditItem
+}
+
 class AddItemViewController: UIViewController, UITextFieldDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+    var actionType : ActionType = ActionType.AddNew
     @IBOutlet weak var itemLabelHeight: NSLayoutConstraint!
     @IBOutlet weak var addItemButton: UIButton!
     @IBOutlet weak var contentBackgroundView: UIView!
@@ -21,6 +27,7 @@ class AddItemViewController: UIViewController, UITextFieldDelegate,UIImagePicker
     @IBOutlet weak var itemNameTextField: UITextField!
     var categoryName : String?
     var selectedColor : UIColor?
+    var editingItem : Item?
     var newMedia: Bool = false
     @IBOutlet weak var titleLabel: UILabel!
     var itemDelegate : AddItemDelegate?
@@ -29,6 +36,15 @@ class AddItemViewController: UIViewController, UITextFieldDelegate,UIImagePicker
         self.titleLabel.text = self.categoryName!.uppercaseString
         self.contentBackgroundView.layer.cornerRadius = kAddBackgroundCornerRadius
         self.addItemButton.layer.cornerRadius = kAddButtonCornerRadius
+
+        if(self.actionType == ActionType.EditItem)
+        {
+            self.itemImageView.image = UIImage(data: self.editingItem!.itemImage!)
+            self.itemNameTextField.text = self.editingItem!.itemName
+            self.newMedia = true
+            self.addItemButton.setTitle("UPDATE ITEM", forState: UIControlState.Normal)
+            self.addItemButton.setTitle("UPDATE ITEM", forState: UIControlState.Selected)
+        }
 
         self.addItemButton.backgroundColor = self.selectedColor!
     }
@@ -116,11 +132,18 @@ class AddItemViewController: UIViewController, UITextFieldDelegate,UIImagePicker
     }
 
     @IBAction func addItemClicked(sender: AnyObject) {
-        if((self.itemNameTextField.text!.characters.count != 0) && newMedia)
+        if((self.itemNameTextField.text!.characters.count != 0) && newMedia && self.actionType == ActionType.AddNew)
         {
             Item.createItem(self.itemNameTextField.text!, image: UIImagePNGRepresentation(self.itemImageView.image!)!, categoryName: self.categoryName!)
             self.itemDelegate!.itemAdded()
             self.dismissViewControllerAnimated(true, completion: nil)
+        }
+        else if((self.itemNameTextField.text!.characters.count != 0) && newMedia && self.actionType == ActionType.EditItem)
+        {
+            DataHelper.sharedInstance.editItem(self.editingItem!.itemName!, updatedName: self.itemNameTextField.text!, updatedImage: UIImagePNGRepresentation(self.itemImageView.image!)!)
+            self.dismissViewControllerAnimated(true, completion: nil)
+            self.itemDelegate!.itemAdded()
+
         }
         else
         {
