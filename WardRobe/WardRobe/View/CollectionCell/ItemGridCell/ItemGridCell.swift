@@ -9,7 +9,7 @@
 import UIKit
 
 class ItemGridCell: UICollectionViewCell {
-
+    @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var itemNameLabel: UILabel!
     @IBOutlet weak var itemimageView: UIImageView!
     override func awakeFromNib() {

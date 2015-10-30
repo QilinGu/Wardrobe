@@ -11,6 +11,7 @@ import UIKit
 public class DashboardViewController: UIViewController {
     let backgroundColors = [UIColor.getBlueBackgroundForShirt(), UIColor.getCremeBackgroundForShirt()]
     @IBOutlet weak var collectionView: UICollectionView!
+    var deletedItem : Item?
     var selectedCategory : Category?
     var selectedColor : UIColor?
     override public func viewDidLoad() {
@@ -36,7 +37,18 @@ public class DashboardViewController: UIViewController {
         }
     }
 
-    @IBAction func shuffleButtonClicked(sender: AnyObject) {
+    func deleteButtonClicked(button : UIButton)
+    {
+        let alertController = UIAlertController(title: "", message: "Are you sure you want to delete this item?", preferredStyle: .Alert)
+        let cancelAction = UIAlertAction(title: "No", style: .Cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        let defaultAction = UIAlertAction(title: "Yes", style: .Default, handler: { action in
+            
+//            DataHelper.sharedInstance.deleteItem(self.deletedItem!.itemName!)
+
+        })
+        alertController.addAction(defaultAction)
+        presentViewController(alertController, animated: true, completion: nil)
     }
 
 }
@@ -83,9 +95,9 @@ extension DashboardViewController : UICollectionViewDataSource {
             cell.itemimageView.image = UIImage(data: (category.category_item?.allObjects[indexPath.row] as! Item).itemImage!)
             cell.itemNameLabel.text = (category.category_item?.allObjects[indexPath.row] as! Item).itemName
         }
+        cell.deleteButton.addTarget(self, action: "deleteButtonClicked:", forControlEvents: UIControlEvents.TouchUpInside)
         cell.contentView.clipsToBounds = true
         cell.contentView.layer.cornerRadius = 5.0
-
         return cell
     }
 

@@ -46,15 +46,25 @@
                             <constraint firstAttribute="height" constant="23" id="yTF-mW-d63"/>
                         </constraints>
                     </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9dL-La-jot">
+                        <rect key="frame" x="110" y="0.0" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="DKr-ac-0yv"/>
+                            <constraint firstAttribute="height" constant="20" id="l4h-YH-g49"/>
+                        </constraints>
+                        <state key="normal" image="black_cross"/>
+                    </button>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="ghI-nO-DFM" secondAttribute="bottom" id="23R-3S-MYR"/>
+                <constraint firstItem="9dL-La-jot" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="UYH-mr-AtA"/>
                 <constraint firstItem="U95-V7-a4S" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Ukr-cf-Oys"/>
                 <constraint firstAttribute="bottom" secondItem="Gvt-HH-IeV" secondAttribute="bottom" id="YwG-Zc-zNC"/>
                 <constraint firstAttribute="trailing" secondItem="U95-V7-a4S" secondAttribute="trailing" id="b5W-iK-28X"/>
+                <constraint firstAttribute="trailing" secondItem="9dL-La-jot" secondAttribute="trailing" id="d5g-Q0-2OP"/>
                 <constraint firstItem="Gvt-HH-IeV" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="nja-w2-feL"/>
                 <constraint firstItem="U95-V7-a4S" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="noa-9y-OWO"/>
                 <constraint firstItem="ghI-nO-DFM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="sfC-lt-5Es"/>
@@ -65,10 +75,14 @@
             </constraints>
             <size key="customSize" width="130" height="132"/>
             <connections>
+                <outlet property="deleteButton" destination="9dL-La-jot" id="cm9-M6-NcH"/>
                 <outlet property="itemNameLabel" destination="wSX-4A-BdN" id="p7T-B1-E0D"/>
                 <outlet property="itemimageView" destination="U95-V7-a4S" id="UnL-jQ-uAG"/>
             </connections>
             <point key="canvasLocation" x="122" y="292"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="black_cross" width="128" height="128"/>
+    </resources>
 </document>

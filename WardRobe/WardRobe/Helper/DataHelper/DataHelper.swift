@@ -48,4 +48,21 @@ public class DataHelper: NSObject {
         return Category()
     }
 
+    func deleteItem(name : String)
+    {
+        var itemList = [Item]()
+
+        let fetchRequest = NSFetchRequest(entityName: "Item")
+        do {
+            try itemList = DatabaseHelper.sharedInstance.managedObjectContext.executeFetchRequest(fetchRequest) as! [Item]
+            if(itemList.count > 0)
+            {
+                DatabaseHelper.sharedInstance.managedObjectContext.deleteObject(itemList[0] as Item)
+            }
+        } catch let error as NSError {
+            // failure
+            print("Fetch failed: \(error.localizedDescription)")
+        }
+    }
+
 }
