@@ -11,7 +11,6 @@ import UIKit
 public class DashboardViewController: UIViewController {
     let backgroundColors = [UIColor.getBlueBackgroundForShirt(), UIColor.getCremeBackgroundForShirt()]
     @IBOutlet weak var collectionView: UICollectionView!
-    var deletedItem : Item?
     var selectedCategory : Category?
     var selectedColor : UIColor?
     override public func viewDidLoad() {
@@ -43,8 +42,16 @@ public class DashboardViewController: UIViewController {
         let cancelAction = UIAlertAction(title: "No", style: .Cancel, handler: nil)
         alertController.addAction(cancelAction)
         let defaultAction = UIAlertAction(title: "Yes", style: .Default, handler: { action in
-            
-//            DataHelper.sharedInstance.deleteItem(self.deletedItem!.itemName!)
+            let position: CGPoint = button.convertPoint(CGPointZero, toView: self.collectionView)
+            if let indexPath = self.collectionView.indexPathForItemAtPoint(position)
+            {
+                let section = indexPath.section
+                let category : Category = UserSession.sharedInstance.categoryList[section]
+                let item = (category.category_item?.allObjects[button.tag] as! Item)
+                DataHelper.sharedInstance.deleteItem(item.itemName!)
+                self.itemAdded()
+            }
+
 
         })
         alertController.addAction(defaultAction)
@@ -89,13 +96,16 @@ extension DashboardViewController : UICollectionViewDataSource {
         if(indexPath.item == category.category_item!.count)
         {
             cell.itemimageView.image = UIImage(named: kDefaultImage)
+            cell.deleteButton.hidden = true
         }
         else
         {
+            cell.deleteButton.hidden = false
             cell.itemimageView.image = UIImage(data: (category.category_item?.allObjects[indexPath.row] as! Item).itemImage!)
             cell.itemNameLabel.text = (category.category_item?.allObjects[indexPath.row] as! Item).itemName
         }
         cell.deleteButton.addTarget(self, action: "deleteButtonClicked:", forControlEvents: UIControlEvents.TouchUpInside)
+        cell.deleteButton.tag = indexPath.item
         cell.contentView.clipsToBounds = true
         cell.contentView.layer.cornerRadius = 5.0
         return cell
