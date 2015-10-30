@@ -1,0 +1,580 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F2DB74101BE1F1A700F88CF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2DB740E1BE1F1A700F88CF2 /* Main.storyboard */; };
+		F2DB74121BE1F1A700F88CF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2DB74111BE1F1A700F88CF2 /* Assets.xcassets */; };
+		F2DB74151BE1F1A700F88CF2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2DB74131BE1F1A700F88CF2 /* LaunchScreen.storyboard */; };
+		F2DB741E1BE206C600F88CF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DB741D1BE206C600F88CF2 /* AppDelegate.swift */; settings = {ASSET_TAGS = (); }; };
+		F2DB742F1BE207DB00F88CF2 /* Wardrobe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F2DB742D1BE207DB00F88CF2 /* Wardrobe.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
+		F2DB74321BE2081C00F88CF2 /* CategoryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DB74311BE2081C00F88CF2 /* CategoryExtension.swift */; settings = {ASSET_TAGS = (); }; };
+		F2DB74341BE2083400F88CF2 /* ItemExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DB74331BE2083400F88CF2 /* ItemExtension.swift */; settings = {ASSET_TAGS = (); }; };
+		F2DB74391BE2092A00F88CF2 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DB74351BE2092A00F88CF2 /* Category+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
+		F2DB743A1BE2092A00F88CF2 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DB74361BE2092A00F88CF2 /* Category.swift */; settings = {ASSET_TAGS = (); }; };
+		F2DB743B1BE2092A00F88CF2 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DB74371BE2092A00F88CF2 /* Item+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
+		F2DB743C1BE2092A00F88CF2 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DB74381BE2092A00F88CF2 /* Item.swift */; settings = {ASSET_TAGS = (); }; };
+		F2DB743F1BE2099000F88CF2 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DB743E1BE2099000F88CF2 /* DashboardViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		F2DB74491BE20A5C00F88CF2 /* ItemGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DB74471BE20A5C00F88CF2 /* ItemGridCell.swift */; settings = {ASSET_TAGS = (); }; };
+		F2DB744A1BE20A5C00F88CF2 /* ItemGridCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2DB74481BE20A5C00F88CF2 /* ItemGridCell.xib */; settings = {ASSET_TAGS = (); }; };
+		F2DB745C1BE20AD400F88CF2 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F2DB744E1BE20AD400F88CF2 /* Roboto-Light.ttf */; settings = {ASSET_TAGS = (); }; };
+		F2DB745D1BE20AD400F88CF2 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F2DB744F1BE20AD400F88CF2 /* Roboto-Medium.ttf */; settings = {ASSET_TAGS = (); }; };
+		F2DB745E1BE20AD400F88CF2 /* Roboto-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F2DB74501BE20AD400F88CF2 /* Roboto-MediumItalic.ttf */; settings = {ASSET_TAGS = (); }; };
+		F2DB745F1BE20AD400F88CF2 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F2DB74511BE20AD400F88CF2 /* Roboto-Regular.ttf */; settings = {ASSET_TAGS = (); }; };
+		F2DB74601BE20AD400F88CF2 /* roboto_bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F2DB74521BE20AD400F88CF2 /* roboto_bold.ttf */; settings = {ASSET_TAGS = (); }; };
+		F2DB74611BE20AD400F88CF2 /* roboto_boldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F2DB74531BE20AD400F88CF2 /* roboto_boldItalic.ttf */; settings = {ASSET_TAGS = (); }; };
+		F2DB74621BE20AD400F88CF2 /* roboto_italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F2DB74541BE20AD400F88CF2 /* roboto_italic.ttf */; settings = {ASSET_TAGS = (); }; };
+		F2DB74631BE20AD400F88CF2 /* roboto_lightitalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F2DB74551BE20AD400F88CF2 /* roboto_lightitalic.ttf */; settings = {ASSET_TAGS = (); }; };
+		F2DB74641BE20AD400F88CF2 /* RobotoCondensed-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F2DB74561BE20AD400F88CF2 /* RobotoCondensed-Bold.ttf */; settings = {ASSET_TAGS = (); }; };
+		F2DB74651BE20AD400F88CF2 /* RobotoCondensed-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F2DB74571BE20AD400F88CF2 /* RobotoCondensed-BoldItalic.ttf */; settings = {ASSET_TAGS = (); }; };
+		F2DB74661BE20AD400F88CF2 /* RobotoCondensed-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F2DB74581BE20AD400F88CF2 /* RobotoCondensed-Italic.ttf */; settings = {ASSET_TAGS = (); }; };
+		F2DB74671BE20AD400F88CF2 /* RobotoCondensed-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F2DB74591BE20AD400F88CF2 /* RobotoCondensed-Light.ttf */; settings = {ASSET_TAGS = (); }; };
+		F2DB74681BE20AD400F88CF2 /* RobotoCondensed-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F2DB745A1BE20AD400F88CF2 /* RobotoCondensed-LightItalic.ttf */; settings = {ASSET_TAGS = (); }; };
+		F2DB74691BE20AD400F88CF2 /* RobotoCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F2DB745B1BE20AD400F88CF2 /* RobotoCondensed-Regular.ttf */; settings = {ASSET_TAGS = (); }; };
+		F2DB746C1BE20B8E00F88CF2 /* ItemRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DB746A1BE20B8E00F88CF2 /* ItemRowCell.swift */; settings = {ASSET_TAGS = (); }; };
+		F2DB746D1BE20B8E00F88CF2 /* ItemRowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2DB746B1BE20B8E00F88CF2 /* ItemRowCell.xib */; settings = {ASSET_TAGS = (); }; };
+		F2DB74731BE20C1400F88CF2 /* ItemHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DB74711BE20C1400F88CF2 /* ItemHeaderView.swift */; settings = {ASSET_TAGS = (); }; };
+		F2DB74741BE20C1400F88CF2 /* ItemHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2DB74721BE20C1400F88CF2 /* ItemHeaderView.xib */; settings = {ASSET_TAGS = (); }; };
+		F2DB74791BE20DEA00F88CF2 /* DataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DB74781BE20DEA00F88CF2 /* DataHelper.swift */; settings = {ASSET_TAGS = (); }; };
+		F2DB747C1BE20E6000F88CF2 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DB747B1BE20E6000F88CF2 /* UserSession.swift */; settings = {ASSET_TAGS = (); }; };
+		F2DB749F1BE2236C00F88CF2 /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DB749E1BE2236C00F88CF2 /* DatabaseHelper.swift */; settings = {ASSET_TAGS = (); }; };
+		F2DB74A11BE23E4800F88CF2 /* ColorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DB74A01BE23E4800F88CF2 /* ColorUtil.swift */; settings = {ASSET_TAGS = (); }; };
+		F2DB74A61BE249C100F88CF2 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DB74A51BE249C100F88CF2 /* AddItemViewController.swift */; settings = {ASSET_TAGS = (); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F2DB74071BE1F1A700F88CF2 /* WardRobe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WardRobe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2DB740F1BE1F1A700F88CF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F2DB74111BE1F1A700F88CF2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F2DB74141BE1F1A700F88CF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F2DB74161BE1F1A700F88CF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2DB741D1BE206C600F88CF2 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = AppDelegate/AppDelegate.swift; sourceTree = "<group>"; };
+		F2DB742E1BE207DB00F88CF2 /* Wardrobe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Wardrobe.xcdatamodel; sourceTree = "<group>"; };
+		F2DB74311BE2081C00F88CF2 /* CategoryExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryExtension.swift; path = Model/ModelExtensions/CategoryExtension.swift; sourceTree = "<group>"; };
+		F2DB74331BE2083400F88CF2 /* ItemExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemExtension.swift; path = Model/ModelExtensions/ItemExtension.swift; sourceTree = "<group>"; };
+		F2DB74351BE2092A00F88CF2 /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Category+CoreDataProperties.swift"; path = "Model/ModelClasses/Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F2DB74361BE2092A00F88CF2 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Category.swift; path = Model/ModelClasses/Category.swift; sourceTree = "<group>"; };
+		F2DB74371BE2092A00F88CF2 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Item+CoreDataProperties.swift"; path = "Model/ModelClasses/Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F2DB74381BE2092A00F88CF2 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Item.swift; path = Model/ModelClasses/Item.swift; sourceTree = "<group>"; };
+		F2DB743E1BE2099000F88CF2 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DashboardViewController.swift; path = Features/Dashboard/DashboardViewController.swift; sourceTree = "<group>"; };
+		F2DB74471BE20A5C00F88CF2 /* ItemGridCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemGridCell.swift; sourceTree = "<group>"; };
+		F2DB74481BE20A5C00F88CF2 /* ItemGridCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemGridCell.xib; sourceTree = "<group>"; };
+		F2DB744E1BE20AD400F88CF2 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
+		F2DB744F1BE20AD400F88CF2 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		F2DB74501BE20AD400F88CF2 /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
+		F2DB74511BE20AD400F88CF2 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		F2DB74521BE20AD400F88CF2 /* roboto_bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = roboto_bold.ttf; sourceTree = "<group>"; };
+		F2DB74531BE20AD400F88CF2 /* roboto_boldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = roboto_boldItalic.ttf; sourceTree = "<group>"; };
+		F2DB74541BE20AD400F88CF2 /* roboto_italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = roboto_italic.ttf; sourceTree = "<group>"; };
+		F2DB74551BE20AD400F88CF2 /* roboto_lightitalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = roboto_lightitalic.ttf; sourceTree = "<group>"; };
+		F2DB74561BE20AD400F88CF2 /* RobotoCondensed-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Bold.ttf"; sourceTree = "<group>"; };
+		F2DB74571BE20AD400F88CF2 /* RobotoCondensed-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-BoldItalic.ttf"; sourceTree = "<group>"; };
+		F2DB74581BE20AD400F88CF2 /* RobotoCondensed-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Italic.ttf"; sourceTree = "<group>"; };
+		F2DB74591BE20AD400F88CF2 /* RobotoCondensed-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Light.ttf"; sourceTree = "<group>"; };
+		F2DB745A1BE20AD400F88CF2 /* RobotoCondensed-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-LightItalic.ttf"; sourceTree = "<group>"; };
+		F2DB745B1BE20AD400F88CF2 /* RobotoCondensed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Regular.ttf"; sourceTree = "<group>"; };
+		F2DB746A1BE20B8E00F88CF2 /* ItemRowCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemRowCell.swift; path = ItemRow/ItemRowCell.swift; sourceTree = "<group>"; };
+		F2DB746B1BE20B8E00F88CF2 /* ItemRowCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ItemRowCell.xib; path = ItemRow/ItemRowCell.xib; sourceTree = "<group>"; };
+		F2DB74711BE20C1400F88CF2 /* ItemHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemHeaderView.swift; path = View/CollectionHeader/ItemHeaderView.swift; sourceTree = "<group>"; };
+		F2DB74721BE20C1400F88CF2 /* ItemHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ItemHeaderView.xib; path = View/CollectionHeader/ItemHeaderView.xib; sourceTree = "<group>"; };
+		F2DB74781BE20DEA00F88CF2 /* DataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataHelper.swift; path = Helper/DataHelper/DataHelper.swift; sourceTree = "<group>"; };
+		F2DB747B1BE20E6000F88CF2 /* UserSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserSession.swift; path = UserSession/UserSession.swift; sourceTree = "<group>"; };
+		F2DB749E1BE2236C00F88CF2 /* DatabaseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatabaseHelper.swift; path = Helper/DatabaseHelper/DatabaseHelper.swift; sourceTree = "<group>"; };
+		F2DB74A01BE23E4800F88CF2 /* ColorUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorUtil.swift; sourceTree = "<group>"; };
+		F2DB74A51BE249C100F88CF2 /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F2DB74041BE1F1A700F88CF2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F2DB73FE1BE1F1A700F88CF2 = {
+			isa = PBXGroup;
+			children = (
+				F2DB74091BE1F1A700F88CF2 /* WardRobe */,
+				F2DB74081BE1F1A700F88CF2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F2DB74081BE1F1A700F88CF2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F2DB74071BE1F1A700F88CF2 /* WardRobe.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F2DB74091BE1F1A700F88CF2 /* WardRobe */ = {
+			isa = PBXGroup;
+			children = (
+				F2DB747A1BE20E3900F88CF2 /* UserSession */,
+				F2DB74771BE20DA700F88CF2 /* Helper */,
+				F2DB74411BE209A500F88CF2 /* Views */,
+				F2DB743D1BE2094C00F88CF2 /* Features */,
+				F2DB741F1BE206CA00F88CF2 /* Model */,
+				F2DB741C1BE2069500F88CF2 /* AppDelegate */,
+				F2DB744D1BE20AD400F88CF2 /* Fonts */,
+				F2DB74111BE1F1A700F88CF2 /* Assets.xcassets */,
+				F2DB74131BE1F1A700F88CF2 /* LaunchScreen.storyboard */,
+				F2DB74161BE1F1A700F88CF2 /* Info.plist */,
+			);
+			path = WardRobe;
+			sourceTree = "<group>";
+		};
+		F2DB741C1BE2069500F88CF2 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				F2DB741D1BE206C600F88CF2 /* AppDelegate.swift */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		F2DB741F1BE206CA00F88CF2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F2DB74301BE207FF00F88CF2 /* ModelExtensions */,
+				F2DB742C1BE207B800F88CF2 /* Database */,
+				F2DB74231BE2078B00F88CF2 /* ModelClasses */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		F2DB74231BE2078B00F88CF2 /* ModelClasses */ = {
+			isa = PBXGroup;
+			children = (
+				F2DB74351BE2092A00F88CF2 /* Category+CoreDataProperties.swift */,
+				F2DB74361BE2092A00F88CF2 /* Category.swift */,
+				F2DB74371BE2092A00F88CF2 /* Item+CoreDataProperties.swift */,
+				F2DB74381BE2092A00F88CF2 /* Item.swift */,
+			);
+			name = ModelClasses;
+			sourceTree = "<group>";
+		};
+		F2DB742C1BE207B800F88CF2 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				F2DB742D1BE207DB00F88CF2 /* Wardrobe.xcdatamodeld */,
+			);
+			name = Database;
+			sourceTree = "<group>";
+		};
+		F2DB74301BE207FF00F88CF2 /* ModelExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				F2DB74311BE2081C00F88CF2 /* CategoryExtension.swift */,
+				F2DB74331BE2083400F88CF2 /* ItemExtension.swift */,
+			);
+			name = ModelExtensions;
+			sourceTree = "<group>";
+		};
+		F2DB743D1BE2094C00F88CF2 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				F2DB74A41BE249C100F88CF2 /* AddItem */,
+				F2DB74401BE2099400F88CF2 /* Dashboard */,
+			);
+			name = Features;
+			sourceTree = "<group>";
+		};
+		F2DB74401BE2099400F88CF2 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				F2DB743E1BE2099000F88CF2 /* DashboardViewController.swift */,
+			);
+			name = Dashboard;
+			sourceTree = "<group>";
+		};
+		F2DB74411BE209A500F88CF2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F2DB74761BE20CDB00F88CF2 /* Storyboard */,
+				F2DB74751BE20C2100F88CF2 /* CollectionHeaderView */,
+				F2DB74451BE20A3D00F88CF2 /* CollectionCell */,
+				F2DB74421BE209AE00F88CF2 /* Layouts */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		F2DB74421BE209AE00F88CF2 /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Layouts;
+			sourceTree = "<group>";
+		};
+		F2DB74451BE20A3D00F88CF2 /* CollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				F2DB746E1BE20B9300F88CF2 /* ItemRowCell */,
+				F2DB74461BE20A3D00F88CF2 /* ItemGridCell */,
+			);
+			name = CollectionCell;
+			path = View/CollectionCell;
+			sourceTree = "<group>";
+		};
+		F2DB74461BE20A3D00F88CF2 /* ItemGridCell */ = {
+			isa = PBXGroup;
+			children = (
+				F2DB74471BE20A5C00F88CF2 /* ItemGridCell.swift */,
+				F2DB74481BE20A5C00F88CF2 /* ItemGridCell.xib */,
+			);
+			path = ItemGridCell;
+			sourceTree = "<group>";
+		};
+		F2DB744D1BE20AD400F88CF2 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F2DB744E1BE20AD400F88CF2 /* Roboto-Light.ttf */,
+				F2DB744F1BE20AD400F88CF2 /* Roboto-Medium.ttf */,
+				F2DB74501BE20AD400F88CF2 /* Roboto-MediumItalic.ttf */,
+				F2DB74511BE20AD400F88CF2 /* Roboto-Regular.ttf */,
+				F2DB74521BE20AD400F88CF2 /* roboto_bold.ttf */,
+				F2DB74531BE20AD400F88CF2 /* roboto_boldItalic.ttf */,
+				F2DB74541BE20AD400F88CF2 /* roboto_italic.ttf */,
+				F2DB74551BE20AD400F88CF2 /* roboto_lightitalic.ttf */,
+				F2DB74561BE20AD400F88CF2 /* RobotoCondensed-Bold.ttf */,
+				F2DB74571BE20AD400F88CF2 /* RobotoCondensed-BoldItalic.ttf */,
+				F2DB74581BE20AD400F88CF2 /* RobotoCondensed-Italic.ttf */,
+				F2DB74591BE20AD400F88CF2 /* RobotoCondensed-Light.ttf */,
+				F2DB745A1BE20AD400F88CF2 /* RobotoCondensed-LightItalic.ttf */,
+				F2DB745B1BE20AD400F88CF2 /* RobotoCondensed-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		F2DB746E1BE20B9300F88CF2 /* ItemRowCell */ = {
+			isa = PBXGroup;
+			children = (
+				F2DB746A1BE20B8E00F88CF2 /* ItemRowCell.swift */,
+				F2DB746B1BE20B8E00F88CF2 /* ItemRowCell.xib */,
+			);
+			name = ItemRowCell;
+			sourceTree = "<group>";
+		};
+		F2DB74751BE20C2100F88CF2 /* CollectionHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				F2DB74711BE20C1400F88CF2 /* ItemHeaderView.swift */,
+				F2DB74721BE20C1400F88CF2 /* ItemHeaderView.xib */,
+			);
+			name = CollectionHeaderView;
+			sourceTree = "<group>";
+		};
+		F2DB74761BE20CDB00F88CF2 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				F2DB740E1BE1F1A700F88CF2 /* Main.storyboard */,
+			);
+			name = Storyboard;
+			path = View/Storyboard;
+			sourceTree = "<group>";
+		};
+		F2DB74771BE20DA700F88CF2 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				F2DB74A01BE23E4800F88CF2 /* ColorUtil.swift */,
+				F2DB74781BE20DEA00F88CF2 /* DataHelper.swift */,
+				F2DB749E1BE2236C00F88CF2 /* DatabaseHelper.swift */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
+		F2DB747A1BE20E3900F88CF2 /* UserSession */ = {
+			isa = PBXGroup;
+			children = (
+				F2DB747B1BE20E6000F88CF2 /* UserSession.swift */,
+			);
+			name = UserSession;
+			sourceTree = "<group>";
+		};
+		F2DB74A41BE249C100F88CF2 /* AddItem */ = {
+			isa = PBXGroup;
+			children = (
+				F2DB74A51BE249C100F88CF2 /* AddItemViewController.swift */,
+			);
+			name = AddItem;
+			path = Features/AddItem;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F2DB74061BE1F1A700F88CF2 /* WardRobe */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F2DB74191BE1F1A700F88CF2 /* Build configuration list for PBXNativeTarget "WardRobe" */;
+			buildPhases = (
+				F2DB74031BE1F1A700F88CF2 /* Sources */,
+				F2DB74041BE1F1A700F88CF2 /* Frameworks */,
+				F2DB74051BE1F1A700F88CF2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WardRobe;
+			productName = WardRobe;
+			productReference = F2DB74071BE1F1A700F88CF2 /* WardRobe.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F2DB73FF1BE1F1A700F88CF2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = bombaybrew;
+				TargetAttributes = {
+					F2DB74061BE1F1A700F88CF2 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+				};
+			};
+			buildConfigurationList = F2DB74021BE1F1A700F88CF2 /* Build configuration list for PBXProject "WardRobe" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F2DB73FE1BE1F1A700F88CF2;
+			productRefGroup = F2DB74081BE1F1A700F88CF2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F2DB74061BE1F1A700F88CF2 /* WardRobe */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F2DB74051BE1F1A700F88CF2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2DB74651BE20AD400F88CF2 /* RobotoCondensed-BoldItalic.ttf in Resources */,
+				F2DB74151BE1F1A700F88CF2 /* LaunchScreen.storyboard in Resources */,
+				F2DB74671BE20AD400F88CF2 /* RobotoCondensed-Light.ttf in Resources */,
+				F2DB74121BE1F1A700F88CF2 /* Assets.xcassets in Resources */,
+				F2DB745F1BE20AD400F88CF2 /* Roboto-Regular.ttf in Resources */,
+				F2DB74681BE20AD400F88CF2 /* RobotoCondensed-LightItalic.ttf in Resources */,
+				F2DB74691BE20AD400F88CF2 /* RobotoCondensed-Regular.ttf in Resources */,
+				F2DB745D1BE20AD400F88CF2 /* Roboto-Medium.ttf in Resources */,
+				F2DB74631BE20AD400F88CF2 /* roboto_lightitalic.ttf in Resources */,
+				F2DB745C1BE20AD400F88CF2 /* Roboto-Light.ttf in Resources */,
+				F2DB745E1BE20AD400F88CF2 /* Roboto-MediumItalic.ttf in Resources */,
+				F2DB744A1BE20A5C00F88CF2 /* ItemGridCell.xib in Resources */,
+				F2DB74601BE20AD400F88CF2 /* roboto_bold.ttf in Resources */,
+				F2DB74611BE20AD400F88CF2 /* roboto_boldItalic.ttf in Resources */,
+				F2DB74741BE20C1400F88CF2 /* ItemHeaderView.xib in Resources */,
+				F2DB74101BE1F1A700F88CF2 /* Main.storyboard in Resources */,
+				F2DB74641BE20AD400F88CF2 /* RobotoCondensed-Bold.ttf in Resources */,
+				F2DB746D1BE20B8E00F88CF2 /* ItemRowCell.xib in Resources */,
+				F2DB74621BE20AD400F88CF2 /* roboto_italic.ttf in Resources */,
+				F2DB74661BE20AD400F88CF2 /* RobotoCondensed-Italic.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F2DB74031BE1F1A700F88CF2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2DB74A61BE249C100F88CF2 /* AddItemViewController.swift in Sources */,
+				F2DB741E1BE206C600F88CF2 /* AppDelegate.swift in Sources */,
+				F2DB749F1BE2236C00F88CF2 /* DatabaseHelper.swift in Sources */,
+				F2DB74791BE20DEA00F88CF2 /* DataHelper.swift in Sources */,
+				F2DB743C1BE2092A00F88CF2 /* Item.swift in Sources */,
+				F2DB747C1BE20E6000F88CF2 /* UserSession.swift in Sources */,
+				F2DB74391BE2092A00F88CF2 /* Category+CoreDataProperties.swift in Sources */,
+				F2DB746C1BE20B8E00F88CF2 /* ItemRowCell.swift in Sources */,
+				F2DB74A11BE23E4800F88CF2 /* ColorUtil.swift in Sources */,
+				F2DB74731BE20C1400F88CF2 /* ItemHeaderView.swift in Sources */,
+				F2DB743B1BE2092A00F88CF2 /* Item+CoreDataProperties.swift in Sources */,
+				F2DB74491BE20A5C00F88CF2 /* ItemGridCell.swift in Sources */,
+				F2DB74341BE2083400F88CF2 /* ItemExtension.swift in Sources */,
+				F2DB742F1BE207DB00F88CF2 /* Wardrobe.xcdatamodeld in Sources */,
+				F2DB74321BE2081C00F88CF2 /* CategoryExtension.swift in Sources */,
+				F2DB743F1BE2099000F88CF2 /* DashboardViewController.swift in Sources */,
+				F2DB743A1BE2092A00F88CF2 /* Category.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F2DB740E1BE1F1A700F88CF2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F2DB740F1BE1F1A700F88CF2 /* Base */,
+			);
+			name = Main.storyboard;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		F2DB74131BE1F1A700F88CF2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F2DB74141BE1F1A700F88CF2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F2DB74171BE1F1A700F88CF2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F2DB74181BE1F1A700F88CF2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F2DB741A1BE1F1A700F88CF2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = WardRobe/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bombaybrew.WardRobe;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F2DB741B1BE1F1A700F88CF2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = WardRobe/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bombaybrew.WardRobe;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F2DB74021BE1F1A700F88CF2 /* Build configuration list for PBXProject "WardRobe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F2DB74171BE1F1A700F88CF2 /* Debug */,
+				F2DB74181BE1F1A700F88CF2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F2DB74191BE1F1A700F88CF2 /* Build configuration list for PBXNativeTarget "WardRobe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F2DB741A1BE1F1A700F88CF2 /* Debug */,
+				F2DB741B1BE1F1A700F88CF2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F2DB742D1BE207DB00F88CF2 /* Wardrobe.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F2DB742E1BE207DB00F88CF2 /* Wardrobe.xcdatamodel */,
+			);
+			currentVersion = F2DB742E1BE207DB00F88CF2 /* Wardrobe.xcdatamodel */;
+			name = Wardrobe.xcdatamodeld;
+			path = Model/Database/Wardrobe.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = F2DB73FF1BE1F1A700F88CF2 /* Project object */;
+}
