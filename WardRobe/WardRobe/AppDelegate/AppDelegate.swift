@@ -25,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let pantImage : UIImage = UIImage(named: "pant")!
             let pantData : NSData = UIImagePNGRepresentation(pantImage)!
             Category.createCategory("Pant", image: pantData)
+            DataHelper.sharedInstance.fetchAllCategories()
 
         }
         return true

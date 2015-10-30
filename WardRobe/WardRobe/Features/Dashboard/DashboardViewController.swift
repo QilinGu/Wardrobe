@@ -29,6 +29,7 @@ public class DashboardViewController: UIViewController {
 
     public override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let destinationViewController = segue.destinationViewController as! AddItemViewController
+        destinationViewController.itemDelegate  = self
         destinationViewController.categoryName = self.selectedCategory!.categoryName!
         destinationViewController.selectedColor = self.selectedColor!
     }
@@ -39,12 +40,20 @@ public class DashboardViewController: UIViewController {
 extension DashboardViewController : UICollectionViewDataSource {
 
     public func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return UserSession.sharedInstance.categoryList.count
+        if(collectionView == self.collectionView)
+        {
+            return UserSession.sharedInstance.categoryList.count
+        }
+        return 1
     }
 
 
-    public func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let category : Category = UserSession.sharedInstance.categoryList[section] 
+    public func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
+        if(collectionView == self.collectionView)
+        {
+            return 1
+        }
+        let category : Category = UserSession.sharedInstance.categoryList[collectionView.tag]
         return category.category_item!.count + 1
     }
 
@@ -56,13 +65,19 @@ extension DashboardViewController : UICollectionViewDataSource {
             cell.collectionView.dataSource = self
             cell.collectionView.delegate = self
             cell.collectionView.tag = indexPath.section
+            cell.collectionView.reloadData()
             return cell
         }
         let cell : ItemGridCell = collectionView.dequeueReusableCellWithReuseIdentifier("ItemGridCell", forIndexPath: indexPath) as! ItemGridCell
-        let category : Category = UserSession.sharedInstance.categoryList[indexPath.section]
-        if(indexPath.row == category.category_item!.count)
+        let category : Category = UserSession.sharedInstance.categoryList[collectionView.tag]
+        if(indexPath.item == category.category_item!.count)
         {
             cell.itemimageView.image = UIImage(named: kDefaultImage)
+        }
+        else
+        {
+            cell.itemimageView.image = UIImage(data: (category.category_item?.allObjects[indexPath.row] as! Item).itemImage!)
+            cell.itemNameLabel.text = (category.category_item?.allObjects[indexPath.row] as! Item).itemName
         }
         cell.contentView.clipsToBounds = true
         cell.contentView.layer.cornerRadius = 5.0
@@ -93,15 +108,14 @@ extension DashboardViewController : UICollectionViewDelegate{
     }
 }
 
-extension DashboardViewController : UICollectionViewDelegateFlowLayout
-{
+extension DashboardViewController : UICollectionViewDelegateFlowLayout{
     public func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize
     {
         if(collectionView == self.collectionView)
         {
             return CGSizeMake(self.collectionView.frame.size.width, kDefaultRowHeight)
         }
-        return CGSizeMake(self.collectionView.frame.size.width / kMaxCellsPerRow, kDefaultRowHeight - (kEdgeInsetLevel2Collection * 2))
+        return CGSizeMake((self.collectionView.frame.size.width - (4 * kEdgeInsetLevel2Collection)) / kMaxCellsPerRow, kDefaultRowHeight - (kEdgeInsetLevel2Collection * 2))
     }
 
     public func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
@@ -122,5 +136,13 @@ extension DashboardViewController : UICollectionViewDelegateFlowLayout
             return CGSizeMake(collectionView.frame.size.width, kDefaultHeaderHeight)
         }
          return CGSizeZero
+    }
+}
+
+extension DashboardViewController : AddItemDelegate{
+    func itemAdded()
+    {
+        DataHelper.sharedInstance.fetchAllCategories()
+        self.collectionView.reloadData()    
     }
 }
