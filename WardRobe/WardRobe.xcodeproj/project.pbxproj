@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F2693E471BE49DC5000915CE /* CIDoorwaySegue.m in Sources */ = {isa = PBXBuildFile; fileRef = F2693E461BE49DC5000915CE /* CIDoorwaySegue.m */; settings = {ASSET_TAGS = (); }; };
 		F277BE471BE40E8000808B42 /* SuggestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F277BE461BE40E8000808B42 /* SuggestionViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		F2DB74101BE1F1A700F88CF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2DB740E1BE1F1A700F88CF2 /* Main.storyboard */; };
 		F2DB74121BE1F1A700F88CF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2DB74111BE1F1A700F88CF2 /* Assets.xcassets */; };
@@ -48,6 +49,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F2693E451BE49DC5000915CE /* CIDoorwaySegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIDoorwaySegue.h; sourceTree = "<group>"; };
+		F2693E461BE49DC5000915CE /* CIDoorwaySegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIDoorwaySegue.m; sourceTree = "<group>"; };
 		F277BE461BE40E8000808B42 /* SuggestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SuggestionViewController.swift; path = Features/Suggestion/SuggestionViewController.swift; sourceTree = "<group>"; };
 		F2DB74071BE1F1A700F88CF2 /* WardRobe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WardRobe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2DB740F1BE1F1A700F88CF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -103,6 +106,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F2693E441BE49DBD000915CE /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				F2693E451BE49DC5000915CE /* CIDoorwaySegue.h */,
+				F2693E461BE49DC5000915CE /* CIDoorwaySegue.m */,
+			);
+			path = ThirdParty;
+			sourceTree = "<group>";
+		};
 		F277BE481BE40E8300808B42 /* Suggestion */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +142,7 @@
 		F2DB74091BE1F1A700F88CF2 /* WardRobe */ = {
 			isa = PBXGroup;
 			children = (
+				F2693E441BE49DBD000915CE /* ThirdParty */,
 				F2DB74A71BE34B7000F88CF2 /* Constants */,
 				F2DB747A1BE20E3900F88CF2 /* UserSession */,
 				F2DB74771BE20DA700F88CF2 /* Helper */,
@@ -466,6 +479,7 @@
 				F2DB743B1BE2092A00F88CF2 /* Item+CoreDataProperties.swift in Sources */,
 				F2DB74BA1BE34EE600F88CF2 /* DataHelper.swift in Sources */,
 				F2DB74491BE20A5C00F88CF2 /* ItemGridCell.swift in Sources */,
+				F2693E471BE49DC5000915CE /* CIDoorwaySegue.m in Sources */,
 				F2DB74341BE2083400F88CF2 /* ItemExtension.swift in Sources */,
 				F2DB742F1BE207DB00F88CF2 /* Wardrobe.xcdatamodeld in Sources */,
 				F2DB74321BE2081C00F88CF2 /* CategoryExtension.swift in Sources */,

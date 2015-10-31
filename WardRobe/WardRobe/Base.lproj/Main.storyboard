@@ -72,34 +72,51 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="EQg-vT-kRx"/>
                                 </connections>
                             </collectionView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wooden_texture" translatesAutoresizingMaskIntoConstraints="NO" id="qqb-rh-raj">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.99215686274509807" green="0.99215686274509807" blue="0.99215686274509807" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="qqb-rh-raj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="1J9-XL-Rab"/>
+                            <constraint firstItem="qqb-rh-raj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="4Jq-py-JnI"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vGw-Lm-gdz" secondAttribute="bottom" id="UpC-ED-YV5"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qqb-rh-raj" secondAttribute="bottom" id="fBp-qL-q4Q"/>
                             <constraint firstAttribute="trailingMargin" secondItem="vGw-Lm-gdz" secondAttribute="trailing" constant="-20" id="fe7-Hh-q5t"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qqb-rh-raj" secondAttribute="trailing" constant="-20" id="gUA-cu-4Qm"/>
                             <constraint firstItem="vGw-Lm-gdz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="tqg-1j-RtY"/>
                             <constraint firstItem="vGw-Lm-gdz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="w4g-dr-sMV"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="vGw-Lm-gdz"/>
+                                <exclude reference="qqb-rh-raj"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="UpC-ED-YV5"/>
+                                <exclude reference="1J9-XL-Rab"/>
+                                <exclude reference="4Jq-py-JnI"/>
+                                <exclude reference="gUA-cu-4Qm"/>
                                 <exclude reference="fe7-Hh-q5t"/>
                                 <exclude reference="tqg-1j-RtY"/>
                                 <exclude reference="w4g-dr-sMV"/>
+                                <exclude reference="UpC-ED-YV5"/>
+                                <exclude reference="fBp-qL-q4Q"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="vGw-Lm-gdz"/>
+                                <include reference="qqb-rh-raj"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="UpC-ED-YV5"/>
+                                <include reference="1J9-XL-Rab"/>
+                                <include reference="4Jq-py-JnI"/>
+                                <include reference="gUA-cu-4Qm"/>
                                 <include reference="fe7-Hh-q5t"/>
                                 <include reference="tqg-1j-RtY"/>
                                 <include reference="w4g-dr-sMV"/>
+                                <include reference="UpC-ED-YV5"/>
+                                <include reference="fBp-qL-q4Q"/>
                             </mask>
                         </variation>
                     </view>
@@ -107,12 +124,13 @@
                         <barButtonItem key="rightBarButtonItem" image="shuffle" width="25" id="fjI-Cy-FPp">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="rh7-Lf-Iw7" kind="show" id="grU-56-VHe"/>
+                                <segue destination="rh7-Lf-Iw7" kind="custom" customClass="CIDoorwaySegue" id="grU-56-VHe"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="vGw-Lm-gdz" id="r67-DY-dbZ"/>
+                        <outlet property="wardRobeDoor" destination="qqb-rh-raj" id="Rna-w9-QFs"/>
                         <segue destination="mNn-I0-keI" kind="presentation" identifier="AddItemSegue" id="Zlf-rX-8Rf"/>
                     </connections>
                 </viewController>

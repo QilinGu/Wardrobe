@@ -38,17 +38,11 @@ class SuggestionViewController: UIViewController {
     }
 
     override func viewDidAppear(animated: Bool) {
-        self.category1DynamicConstraint.constant = -450
-        self.category2DynamicConstraint.constant = 450
-
-        UIView.animateWithDuration(2) {
         self.category1DynamicConstraint.constant = -100
         self.category2DynamicConstraint.constant = 100
 
         self.item1View.layoutIfNeeded()
         self.item2View.layoutIfNeeded()
-
-        }
 
     }
     override func didReceiveMemoryWarning() {

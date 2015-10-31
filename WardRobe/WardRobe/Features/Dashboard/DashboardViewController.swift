@@ -10,6 +10,7 @@ import UIKit
 
 public class DashboardViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var wardRobeDoor: UIImageView!
     override public func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView.registerNib(UINib(nibName: kRowCellIdentifier, bundle: nil), forCellWithReuseIdentifier: kRowCellIdentifier)
@@ -28,7 +29,7 @@ public class DashboardViewController: UIViewController {
     }
 
     public override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-
+        self.wardRobeDoor.hidden = false
     }
 
     func deleteButtonClicked(button : UIButton)
