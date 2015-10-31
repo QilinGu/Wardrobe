@@ -21,6 +21,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="130" height="132"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wooden_texture" translatesAutoresizingMaskIntoConstraints="NO" id="nMZ-V4-9FK">
+                        <rect key="frame" x="0.0" y="0.0" width="130" height="132"/>
+                    </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U95-V7-a4S">
                         <rect key="frame" x="0.0" y="0.0" width="130" height="132"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -60,16 +63,20 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="ghI-nO-DFM" secondAttribute="bottom" id="23R-3S-MYR"/>
+                <constraint firstAttribute="trailing" secondItem="nMZ-V4-9FK" secondAttribute="trailing" id="SaO-a8-UcB"/>
                 <constraint firstItem="9dL-La-jot" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="UYH-mr-AtA"/>
                 <constraint firstItem="U95-V7-a4S" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Ukr-cf-Oys"/>
                 <constraint firstAttribute="bottom" secondItem="Gvt-HH-IeV" secondAttribute="bottom" id="YwG-Zc-zNC"/>
                 <constraint firstAttribute="trailing" secondItem="U95-V7-a4S" secondAttribute="trailing" id="b5W-iK-28X"/>
                 <constraint firstAttribute="trailing" secondItem="9dL-La-jot" secondAttribute="trailing" id="d5g-Q0-2OP"/>
+                <constraint firstAttribute="bottom" secondItem="nMZ-V4-9FK" secondAttribute="bottom" id="hAr-Bp-WEo"/>
                 <constraint firstItem="Gvt-HH-IeV" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="nja-w2-feL"/>
                 <constraint firstItem="U95-V7-a4S" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="noa-9y-OWO"/>
                 <constraint firstItem="ghI-nO-DFM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="sfC-lt-5Es"/>
                 <constraint firstItem="Gvt-HH-IeV" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="uJE-QB-y3q"/>
+                <constraint firstItem="nMZ-V4-9FK" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="vPf-TC-vbG"/>
                 <constraint firstAttribute="trailing" secondItem="ghI-nO-DFM" secondAttribute="trailing" id="vcj-Ue-Q3V"/>
+                <constraint firstItem="nMZ-V4-9FK" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="vnD-Di-nx5"/>
                 <constraint firstAttribute="trailing" secondItem="Gvt-HH-IeV" secondAttribute="trailing" id="y9I-rh-BCg"/>
                 <constraint firstAttribute="bottom" secondItem="U95-V7-a4S" secondAttribute="bottom" id="za3-ts-dr1"/>
             </constraints>
@@ -84,5 +91,6 @@
     </objects>
     <resources>
         <image name="black_cross" width="128" height="128"/>
+        <image name="wooden_texture" width="300" height="188"/>
     </resources>
 </document>

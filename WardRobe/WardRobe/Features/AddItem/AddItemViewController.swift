@@ -19,14 +19,13 @@ enum ActionType{
 }
 
 class AddItemViewController: UIViewController, UITextFieldDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+    @IBOutlet weak var navigationView: UIView!
     var actionType : ActionType = ActionType.AddNew
     @IBOutlet weak var itemLabelHeight: NSLayoutConstraint!
     @IBOutlet weak var addItemButton: UIButton!
-    @IBOutlet weak var contentBackgroundView: UIView!
     @IBOutlet weak var itemImageView: UIImageView!
     @IBOutlet weak var itemNameTextField: UITextField!
     var categoryName : String?
-    var selectedColor : UIColor?
     var editingItem : Item?
     var newMedia: Bool = false
     @IBOutlet weak var titleLabel: UILabel!
@@ -34,8 +33,11 @@ class AddItemViewController: UIViewController, UITextFieldDelegate,UIImagePicker
     override func viewDidLoad() {
         super.viewDidLoad()
         self.titleLabel.text = self.categoryName!.uppercaseString
-        self.contentBackgroundView.layer.cornerRadius = kAddBackgroundCornerRadius
         self.addItemButton.layer.cornerRadius = kAddButtonCornerRadius
+        self.addItemButton.layer.borderColor = UIColor.lightGrayColor().CGColor
+        self.addItemButton.layer.borderWidth = 0.5
+
+        self.navigationView.backgroundColor = UIColor.navigationBarColor()  
 
         if(self.actionType == ActionType.EditItem)
         {
@@ -45,8 +47,6 @@ class AddItemViewController: UIViewController, UITextFieldDelegate,UIImagePicker
             self.addItemButton.setTitle("UPDATE ITEM", forState: UIControlState.Normal)
             self.addItemButton.setTitle("UPDATE ITEM", forState: UIControlState.Selected)
         }
-
-        self.addItemButton.backgroundColor = self.selectedColor!
     }
 
     override func didReceiveMemoryWarning() {

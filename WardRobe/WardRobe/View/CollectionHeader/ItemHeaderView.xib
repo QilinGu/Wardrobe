@@ -15,20 +15,40 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sDC-PT-LZm">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LKw-Nj-Dtr">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
+                    <color key="backgroundColor" red="0.84705882352941175" green="0.84705882352941175" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="F42-Hf-lJD"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BKt-78-xBb">
+                    <rect key="frame" x="0.0" y="29" width="320" height="1"/>
+                    <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="fst-If-ATX"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hjgh" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sDC-PT-LZm">
                     <rect key="frame" x="8" y="4" width="304" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="cpl-SZ-E6M"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="15"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
+            <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="LKw-Nj-Dtr" secondAttribute="trailing" id="9hW-no-Mfa"/>
+                <constraint firstItem="LKw-Nj-Dtr" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="LLN-Rv-lQk"/>
+                <constraint firstAttribute="trailing" secondItem="BKt-78-xBb" secondAttribute="trailing" id="Nhk-fo-Ctp"/>
+                <constraint firstAttribute="bottom" secondItem="BKt-78-xBb" secondAttribute="bottom" id="QgE-An-0Q5"/>
                 <constraint firstAttribute="trailing" secondItem="sDC-PT-LZm" secondAttribute="trailing" constant="8" id="XR6-8z-ycU"/>
                 <constraint firstItem="sDC-PT-LZm" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" constant="8" id="Yvk-s5-9k7"/>
+                <constraint firstItem="BKt-78-xBb" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="mg8-Dz-nBd"/>
                 <constraint firstItem="sDC-PT-LZm" firstAttribute="centerY" secondItem="U6b-Vx-4bR" secondAttribute="centerY" id="nmc-N3-27H"/>
+                <constraint firstItem="LKw-Nj-Dtr" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="w6q-6V-OTP"/>
             </constraints>
             <connections>
                 <outlet property="headerTitleLabel" destination="sDC-PT-LZm" id="hfA-tL-R2R"/>

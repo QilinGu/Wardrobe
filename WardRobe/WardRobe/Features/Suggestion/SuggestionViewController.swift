@@ -16,7 +16,6 @@ class SuggestionViewController: UIViewController {
     @IBOutlet weak var item2ImageView: UIImageView!
     @IBOutlet weak var category2DynamicConstraint: NSLayoutConstraint!
     @IBOutlet weak var category1ImageView: UIImageView!
-    var animator: UIDynamicAnimator?
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -15,6 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        self.window?.tintColor = UIColor.blackColor()
+
         DataHelper.sharedInstance.fetchAllCategories()
         if(UserSession.sharedInstance.categoryList.count == 0)
         {

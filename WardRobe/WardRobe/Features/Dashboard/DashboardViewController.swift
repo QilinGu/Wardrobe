@@ -9,13 +9,15 @@
 import UIKit
 
 public class DashboardViewController: UIViewController {
-    let backgroundColors = [UIColor.getBlueBackgroundForShirt(), UIColor.getCremeBackgroundForShirt()]
     @IBOutlet weak var collectionView: UICollectionView!
     override public func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView.registerNib(UINib(nibName: kRowCellIdentifier, bundle: nil), forCellWithReuseIdentifier: kRowCellIdentifier)
         self.collectionView.registerNib(UINib(nibName: kHeaderCellIdentifier, bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: kHeaderCellIdentifier)
+        self.collectionView.registerNib(UINib(nibName: kHeaderCellIdentifier, bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: kHeaderCellIdentifier)
+
         self.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Roboto-Light", size: 18)!]
+        self.navigationController!.navigationBar.barTintColor = UIColor.navigationBarColor()
 
         self.title = kDashboardTitle
     }
@@ -77,7 +79,6 @@ extension DashboardViewController : UICollectionViewDataSource {
         if(collectionView == self.collectionView)
         {
             let cell : ItemRowCell = collectionView.dequeueReusableCellWithReuseIdentifier(kRowCellIdentifier, forIndexPath: indexPath) as! ItemRowCell
-            cell.collectionView.backgroundColor = self.backgroundColors[indexPath.section]
             cell.collectionView.dataSource = self
             cell.collectionView.delegate = self
             cell.collectionView.tag = indexPath.section
@@ -100,7 +101,6 @@ extension DashboardViewController : UICollectionViewDataSource {
         cell.deleteButton.addTarget(self, action: "deleteButtonClicked:", forControlEvents: UIControlEvents.TouchUpInside)
         cell.deleteButton.tag = indexPath.item
         cell.contentView.clipsToBounds = true
-        cell.contentView.layer.cornerRadius = 5.0
         return cell
     }
 
@@ -122,7 +122,6 @@ extension DashboardViewController : UICollectionViewDelegate{
         {
             let category : Category = UserSession.sharedInstance.categoryList[collectionView.tag]
             let addItemVC : AddItemViewController = self.storyboard?.instantiateViewControllerWithIdentifier("AddItemViewController") as! AddItemViewController
-            addItemVC.selectedColor = self.backgroundColors[collectionView.tag]
             addItemVC.categoryName = UserSession.sharedInstance.categoryList[collectionView.tag].categoryName!
             addItemVC.itemDelegate  = self
             if(indexPath.item == category.category_item!.count)
@@ -167,6 +166,15 @@ extension DashboardViewController : UICollectionViewDelegateFlowLayout{
             return CGSizeMake(collectionView.frame.size.width, kDefaultHeaderHeight)
         }
          return CGSizeZero
+    }
+
+
+    public func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
+        if(collectionView == self.collectionView)
+        {
+            return 0
+        }
+        return kEdgeInsetLevel2Collection
     }
 }
 

@@ -13,7 +13,6 @@ class ItemHeaderView: UICollectionReusableView {
     @IBOutlet weak var headerTitleLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.headerTitleLabel.textColor = UIColor.getHeaderTitleColor()     
     }
     
 }

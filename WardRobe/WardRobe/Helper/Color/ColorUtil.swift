@@ -19,13 +19,9 @@ extension UIColor
         return UIColor(r: 181, g: 215, b: 214, a: 1)
     }
 
-    class func getCremeBackgroundForShirt() -> UIColor
+    class func navigationBarColor() -> UIColor
     {
-        return UIColor(r: 250, g: 236, b: 223, a: 1)
+        return UIColor(r: 238, g: 238, b: 238, a: 1)
     }
 
-    class func getHeaderTitleColor() -> UIColor
-    {
-        return UIColor(r: 64, g: 64, b: 64, a: 1)
-    }
 }
