@@ -10,17 +10,31 @@ import UIKit
 
 public class DashboardViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var wardRobeDoor: UIImageView!
+    @IBOutlet weak var suggestionButton: UIBarButtonItem!
     override public func viewDidLoad() {
         super.viewDidLoad()
+
+        //Register cells
+
         self.collectionView.registerNib(UINib(nibName: kRowCellIdentifier, bundle: nil), forCellWithReuseIdentifier: kRowCellIdentifier)
         self.collectionView.registerNib(UINib(nibName: kHeaderCellIdentifier, bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: kHeaderCellIdentifier)
         self.collectionView.registerNib(UINib(nibName: kHeaderCellIdentifier, bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: kHeaderCellIdentifier)
+        //UI Customization
 
         self.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Roboto-Light", size: 18)!]
         self.navigationController!.navigationBar.barTintColor = UIColor.navigationBarColor()
 
         self.title = kDashboardTitle
+
+
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: "showSuggestion:",
+            name: "showSuggestion",
+            object: nil)
+    }
+
+    public override func viewWillAppear(animated: Bool) {
     }
 
     override public func didReceiveMemoryWarning() {
@@ -29,15 +43,22 @@ public class DashboardViewController: UIViewController {
     }
 
     public override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        self.wardRobeDoor.hidden = false
     }
 
+    func showSuggestion(notification : NSNotification)
+    {
+        self.performSegueWithIdentifier(kNotificationSegue, sender: self)
+    }
+
+    /*
+    Called when cross button of cell is clicked
+    */
     func deleteButtonClicked(button : UIButton)
     {
-        let alertController = UIAlertController(title: "", message: "Are you sure you want to delete this item?", preferredStyle: .Alert)
-        let cancelAction = UIAlertAction(title: "No", style: .Cancel, handler: nil)
+        let alertController = UIAlertController(title: "", message: kDeleteErrorText, preferredStyle: .Alert)
+        let cancelAction = UIAlertAction(title: kDeleteDissmissText, style: .Cancel, handler: nil)
         alertController.addAction(cancelAction)
-        let defaultAction = UIAlertAction(title: "Yes", style: .Default, handler: { action in
+        let defaultAction = UIAlertAction(title: kDeleteConfirmText, style: .Default, handler: { action in
             let position: CGPoint = button.convertPoint(CGPointZero, toView: self.collectionView)
             if let indexPath = self.collectionView.indexPathForItemAtPoint(position)
             {
@@ -92,9 +113,11 @@ extension DashboardViewController : UICollectionViewDataSource {
         {
             cell.itemimageView.image = UIImage(named: kDefaultImage)
             cell.deleteButton.hidden = true
+            cell.itemNameView.hidden = true
         }
         else
         {
+            cell.itemNameView.hidden = false
             cell.deleteButton.hidden = false
             cell.itemimageView.image = UIImage(data: (category.category_item?.allObjects[indexPath.row] as! Item).itemImage!)
             cell.itemNameLabel.text = (category.category_item?.allObjects[indexPath.row] as! Item).itemName
@@ -183,6 +206,16 @@ extension DashboardViewController : AddItemDelegate{
     func itemAdded()
     {
         DataHelper.sharedInstance.fetchAllCategories()
-        self.collectionView.reloadData()    
+        self.collectionView.reloadData()
+        self.suggestionButton.enabled = DataHelper.sharedInstance.isSuggestionPossible()
+
+        if(DataHelper.sharedInstance.isSuggestionPossible())
+        {
+            NotificationUtil.setNotification()
+        }
+        else
+        {
+            NotificationUtil.cancelAllNotification()
+        }
     }
 }

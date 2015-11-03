@@ -21,7 +21,7 @@ extension UIColor
 
     class func navigationBarColor() -> UIColor
     {
-        return UIColor(r: 238, g: 238, b: 238, a: 1)
+        return UIColor(r: 255, g: 232, b: 212, a: 1)
     }
 
 }

@@ -59,6 +59,8 @@ public class DataHelper: NSObject {
             {
                 DatabaseHelper.sharedInstance.managedObjectContext.deleteObject(itemList[0] as Item)
             }
+            try DatabaseHelper.sharedInstance.managedObjectContext.save()
+
         } catch _ as NSError {
             // failure
         }
@@ -86,6 +88,20 @@ public class DataHelper: NSObject {
             // failure
             print("Fetch failed: \(error.localizedDescription)")
         }
+    }
+
+    /*
+    Check if a valid pair can be formed
+    */
+    func isSuggestionPossible() -> Bool
+    {
+        let category1 : Category = UserSession.sharedInstance.categoryList[0]
+        let category2 : Category = UserSession.sharedInstance.categoryList[1]
+        if(category1.category_item!.count > 0 && category2.category_item!.count > 0)
+        {
+            return true
+        }
+        return false
     }
 
 }

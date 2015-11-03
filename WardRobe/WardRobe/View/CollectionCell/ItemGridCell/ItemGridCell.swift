@@ -9,12 +9,17 @@
 import UIKit
 
 class ItemGridCell: UICollectionViewCell {
+    @IBOutlet weak var borderView: UIView!
+    @IBOutlet weak var itemNameView: UIView!
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var itemNameLabel: UILabel!
     @IBOutlet weak var itemimageView: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+
+        self.borderView.layer.borderColor = UIColor.navigationBarColor().CGColor
+        self.borderView.layer.borderWidth = 1
+        self.borderView.layer.cornerRadius = 5
     }
 
 }

@@ -32,21 +32,37 @@ class AddItemViewController: UIViewController, UITextFieldDelegate,UIImagePicker
     var itemDelegate : AddItemDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.titleLabel.text = self.categoryName!.uppercaseString
+
+        //Customization
         self.addItemButton.layer.cornerRadius = kAddButtonCornerRadius
         self.addItemButton.layer.borderColor = UIColor.lightGrayColor().CGColor
         self.addItemButton.layer.borderWidth = 0.5
+        self.navigationView.backgroundColor = UIColor.navigationBarColor()
 
-        self.navigationView.backgroundColor = UIColor.navigationBarColor()  
+        if(self.categoryName == kShirtImage)
+        {
+            self.itemImageView.image = UIImage(named: "shirt")
+        }
+        else
+        {
+            self.itemImageView.image = UIImage(named: "pant")
+        }
+
+        self.titleLabel.text = self.categoryName!.uppercaseString
 
         if(self.actionType == ActionType.EditItem)
         {
+            //In cae of edit update data of label
             self.itemImageView.image = UIImage(data: self.editingItem!.itemImage!)
             self.itemNameTextField.text = self.editingItem!.itemName
             self.newMedia = true
-            self.addItemButton.setTitle("UPDATE ITEM", forState: UIControlState.Normal)
-            self.addItemButton.setTitle("UPDATE ITEM", forState: UIControlState.Selected)
+            self.addItemButton.setTitle(kEditItemText, forState: UIControlState.Normal)
+            self.addItemButton.setTitle(kEditItemText, forState: UIControlState.Selected)
         }
+
+        self.itemImageView.layer.borderColor = UIColor.navigationBarColor().CGColor
+        self.itemImageView.layer.borderWidth = 1
+        self.itemImageView.layer.cornerRadius = 5
     }
 
     override func didReceiveMemoryWarning() {
@@ -73,24 +89,17 @@ class AddItemViewController: UIViewController, UITextFieldDelegate,UIImagePicker
     }
 
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-
         let mediaType = info[UIImagePickerControllerMediaType] as! String
-
         self.dismissViewControllerAnimated(true, completion: nil)
-
         if mediaType == (kUTTypeImage as String) {
             let image = info[UIImagePickerControllerOriginalImage]
                 as! UIImage
-
             itemImageView.image = image
-
+            self.changeAddButtonState()
             if (newMedia == true) {
                 UIImageWriteToSavedPhotosAlbum(image, self,
                     "image:didFinishSavingWithError:contextInfo:", nil)
-            } else if mediaType == (kUTTypeMovie as String) {
-                // Code to support video here
             }
-            
         }
     }
 
@@ -115,10 +124,14 @@ class AddItemViewController: UIViewController, UITextFieldDelegate,UIImagePicker
     }
 
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        //Get text field text
         var txtAfterUpdate:NSString = textField.text! as NSString
         txtAfterUpdate = txtAfterUpdate.stringByReplacingCharactersInRange(range, withString: string)
 
+        //Unhide the label
         self.itemLabelHeight.constant = txtAfterUpdate.length > 0 ? kTextFieldDefaultHeight : kTextFieldCompressedHeight
+
+        self.changeAddButtonState()
 
         return true
     }
@@ -132,6 +145,7 @@ class AddItemViewController: UIViewController, UITextFieldDelegate,UIImagePicker
     }
 
     @IBAction func addItemClicked(sender: AnyObject) {
+        //Adding a new item
         if((self.itemNameTextField.text!.characters.count != 0) && newMedia && self.actionType == ActionType.AddNew)
         {
             Item.createItem(self.itemNameTextField.text!, image: UIImagePNGRepresentation(self.itemImageView.image!)!, categoryName: self.categoryName!)
@@ -140,6 +154,7 @@ class AddItemViewController: UIViewController, UITextFieldDelegate,UIImagePicker
         }
         else if((self.itemNameTextField.text!.characters.count != 0) && newMedia && self.actionType == ActionType.EditItem)
         {
+            //Editing an existing item
             DataHelper.sharedInstance.editItem(self.editingItem!.itemName!, updatedName: self.itemNameTextField.text!, updatedImage: UIImagePNGRepresentation(self.itemImageView.image!)!)
             self.dismissViewControllerAnimated(true, completion: nil)
             self.itemDelegate!.itemAdded()
@@ -147,10 +162,19 @@ class AddItemViewController: UIViewController, UITextFieldDelegate,UIImagePicker
         }
         else
         {
-            let alertController = UIAlertController(title: "", message: "Please enter complete details to proceed", preferredStyle: .Alert)
-            let defaultAction = UIAlertAction(title: "OK", style: .Cancel, handler: nil)
+            //error
+            let alertController = UIAlertController(title: "", message: kIncompleteErrorText, preferredStyle: .Alert)
+            let defaultAction = UIAlertAction(title: kIncompleteDismissText, style: .Cancel, handler: nil)
             alertController.addAction(defaultAction)
             presentViewController(alertController, animated: true, completion: nil)
+        }
+    }
+
+    func changeAddButtonState()
+    {
+        if(self.newMedia && self.itemNameTextField.text?.characters.count > 0)
+        {
+            self.addItemButton.backgroundColor = UIColor.navigationBarColor()
         }
     }
 }
